@@ -19,7 +19,7 @@ COPY ./requirements.txt ./
 #RUN npm Install 
 
 # install dependencies
-RUN npm /usr/src/rearc/requirements.txt
+RUN npm install /usr/src/rearc/requirements.txt
 
 # Expose container port
 EXPOSE 3000
