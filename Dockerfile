@@ -15,7 +15,7 @@ COPY ./bin ./bin
 COPY ./requirements.txt ./
 
 # Install all dependencies
-RUN npm Install 
+#RUN npm Install 
 
 # install dependencies
 RUN npm /usr/src/rearc/requirements.txt
