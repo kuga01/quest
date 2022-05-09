@@ -11,8 +11,14 @@ WORKDIR /usr/src/rearc
 COPY ./src ./src
 COPY ./bin ./bin
 
+# Copy requirement.txt file
+COPY ./requirements.txt ./
+
 # Install all dependencies
-RUN npm Install
+RUN npm Install 
+
+# install dependencies
+RUN npm /usr/src/rearc/requirements.txt
 
 # Expose container port
 EXPOSE 3000
