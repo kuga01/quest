@@ -13,14 +13,11 @@ COPY ./src ./src
 COPY ./bin ./bin
 COPY ./package.json ./
 
-# Copy requirement.txt file
-COPY ./requirements.txt ./
-
 # Install all dependencies
 #RUN npm Install 
 
 # install dependencies
-RUN npm install /usr/src/rearc/requirements.txt
+RUN npm install
 
 # Expose container port
 EXPOSE 3000
