@@ -1,7 +1,7 @@
 #ARG NODE_VERSION=10
 #RUN if [ ${NODE_VERSION} = 13 ] ; then ${NODE_VERSION} = "13-alpine" ; else ${NODE_VERSION} = ${NODE_VERSION} ; fi
 #FROM node:${NODE_VERSION}
-FROM node:10
+FROM node:10-alpine
 
 #ENV NODE_VERSION = $NODE_VERSION
 
@@ -11,6 +11,7 @@ WORKDIR /usr/src/rearc
 # Copy project files to current working directory
 COPY ./src ./src
 COPY ./bin ./bin
+COPY ./package.json ./
 
 # Copy requirement.txt file
 COPY ./requirements.txt ./
@@ -27,4 +28,4 @@ EXPOSE 3000
 # Set directory for volume
 VOLUME /var/lib/rearc
 
-CMD ["node", "/usr/src/rearc/src/000.js"]
+CMD ["node", "./src/000.js"]
