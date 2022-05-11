@@ -1,9 +1,7 @@
-#ARG NODE_VERSION=10
-#RUN if [ ${NODE_VERSION} = 13 ] ; then ${NODE_VERSION} = "13-alpine" ; else ${NODE_VERSION} = ${NODE_VERSION} ; fi
-#FROM node:${NODE_VERSION}
+ARG SECRET_WORD=TwelveFactor
 FROM node:10-alpine
 
-#ENV NODE_VERSION = $NODE_VERSION
+ENV SECRET_WORD = $SECRET_WORD
 
 # Working Directory
 WORKDIR /usr/src/rearc
@@ -12,9 +10,6 @@ WORKDIR /usr/src/rearc
 COPY ./src ./src
 COPY ./bin ./bin
 COPY ./package.json ./
-
-# Install all dependencies
-#RUN npm Install 
 
 # install dependencies
 RUN npm install
