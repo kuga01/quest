@@ -16,7 +16,7 @@ spec:
           serviceName: rearc-app
           servicePort: 80
         path: /my-rearc-app(/|$)(.*)
-  - host: frontend.52.142.236.126.nip.io # change the IP address here
+  - host: abbff0e9f78ba42e1aa81ac6152a9e79-138281470.us-east-1.elb.amazonaws.com # change the IP address here
     http:
       paths:
       - backend:
